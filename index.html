@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Controle Financeiro</title>
+
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Madimi+One&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header role="banner">
+            <!-- Adicione elementos de navegação, como menus, aqui, se necessário -->
+            <h1>Fidelidade</h1>
+            <h3>Controle de Dízimos e Ofertas</h3>
+        </header>
+        
+        <main role="main">
+            <!-- Aqui vai o conteúdo principal do aplicativo -->
+            <form id="formRegistro">
+                <label for="valor">Valor:</label>
+                <input 
+                type="text" 
+                id="valor" 
+                name="valor" 
+                placeholder="Digite um valor" 
+                tabindex="1" 
+                required pattern="^\d{1,3}(\.\d{3})*(,\d{2})?$|^\d+$" 
+                title="Digite um número válido.">            
+                <!-- <label for="data">Data:</label>
+                <input type="text" id="data" name="data" tabindex="2" required readonly> -->
+                <div class="buttonContainer">
+                    <button class="button-70" type="submit" tabindex="3" aria-label="Adicionar registro">Adicionar Registro</button>
+                </div>
+            </form>             
+            <div style="overflow-x:auto;">
+                <table id="tabelaRegistros">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Valor</th>
+                            <!-- <th>Data</th> -->
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Aqui serão exibidos os registros -->
+                    </tbody>
+                </table>
+            </div>
+
+        </main>
+        <div class="resultado">
+            <div>
+                <button class="button-70" id="btnCalcular" type="button" tabindex="4" aria-label="Calcular totais">Calcular</button>
+            </div>
+            <div class="totais">
+                <div id="totalContainer" class="totais"></div>
+                <div id="resultadoDizimo"></div>
+                <div id="resultadoPrimicia"></div>
+                <div id="resultadoOferta"></div>
+                <div id="somaDosTotais"></div>       
+            </div>
+        </div>
+
+        <footer role="contentinfo">
+            <p>&copy; 2025 Fidelidade</p>
+        </footer>
+
+    </body>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="script.js"></script>
+</html>
